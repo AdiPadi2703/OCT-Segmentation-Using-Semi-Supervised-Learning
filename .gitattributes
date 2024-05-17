@@ -1,1 +1,2 @@
 Resnet50/*.pth filter=lfs diff=lfs merge=lfs -text
+VGG19_bn/*.pth filter=lfs diff=lfs merge=lfs -text
