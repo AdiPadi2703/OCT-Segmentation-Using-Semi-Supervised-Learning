@@ -6,23 +6,23 @@ This project uses a semi-supervised learning approach for the semantic segmentat
 
 ## Dataset
 
-The RETOUCH dataset was used, which is available <a href=”https://www.kaggle.com/datasets/saivikassingamsetty/retouch”>here</a>.  The dataset contains OCT scans from three different vendors with four classes (including the background).  The classes are as follows:<br>
-Class 0: background <br>
+The RETOUCH dataset was used, which is available <a href="https://www.kaggle.com/datasets/saivikassingamsetty/retouch">here</a>.  The dataset contains OCT scans from three different vendors with four classes (including the background).  The classes are as follows:<br><br>
+Class 0: Background <br>
 Class 1: Intra-retinal Fluid<br>
 Class 2: Sub-retinal Fluid<br>
 Class 3: Pigment Epithelial Detachment<br>
 
-For this project, the “train_dataset” directory of images was used as the entire dataset (training and validation).  All the images and masks were read as grayscale, resized to 256x256, and only images were normalized. Linear interpolation was used for resizing both images and masks.
+For this project, the “train_dataset” directory of images was used as the entire dataset (training and validation).  All the images and masks were read as grayscale, resized to 256x256, and only images were normalized. Linear interpolation was used for resizing both images and masks.<br><br>
 The dataset was split into unlabeled, labeled, and validation sets (sizes 2148, 430, and 107 respectively).  The unlabeled batch size was set to 5 and the labeled batch size was set to 1.  This was done so that unlabeled and labeled training could happen simultaneously and due to memory limitations.
 
 ## Model
 
-Two different backbones were used as encoders for the UNet, namely ResNet50 and VGG19 (with batch-normalization).  The models were implemented using the <a href=”https://github.com/qubvel/segmentation_models.pytorch”>segmentation-models-pytorch</a> library.  The semi-supervised approach used was the <a href=”https://arxiv.org/abs/1703.01780”>Mean Teacher</a> model.  Both the student and teacher have the exact same architecture.
+Two different backbones were used as encoders for the UNet, namely ResNet50 and VGG19 (with batch-normalization).  The models were implemented using the <a href="https://github.com/qubvel/segmentation_models.pytorch">segmentation-models-pytorch</a> library.  The semi-supervised approach used was the <a href="https://arxiv.org/abs/1703.01780">Mean Teacher</a> model.  Both the student and teacher have the exact same architecture.  The encoders of the models were both initialized with imagenet weights.
 
 ## Training
 
-A 1:1 combination of dice loss and focal loss was used for training, simply because it gave better results than just dice and a combination of dice and cross-entropy.  Following the paper on the mean teacher model, the EWMA parameter, alpha, was set to 0.99 for the ramp-up phase and 0.999 for training.  During ramp-up, alpha was made to decay as done in the <a href=”https://github.com/CuriousAI/mean-teacher/tree/master/pytorch”>original implementation</a>. <br><br>
-The Adam optimizer was used instead of the proposed SGD due to its faster convergence and better results.  The learning rate was initially set to 0.0001 and made to decay with a factor of 0.1 with respect to the training loss.  More details can be found in “main_notebook.ipynb.”  In addition, a weight decay of 0.0002 was used as done in the original implementation.<br><br>
+A 1:1 combination of dice loss and focal loss was used for training, simply because it gave better results than just dice and a combination of dice and cross-entropy.  Following the paper on the mean teacher model, the EWMA parameter, alpha, was set to 0.99 for the ramp-up phase and 0.999 for training.  During ramp-up, alpha was made to decay as done in the <a href="https://github.com/CuriousAI/mean-teacher/tree/master/pytorch">original Mean Teacher implementation</a>. <br><br>
+The Adam optimizer was used instead of the proposed SGD due to its faster convergence and better results.  The learning rate was initially set to 0.0001 and made to decay with a factor of 0.1 with respect to the training loss.  More details can be found in “main_notebook.ipynb.”  In addition, a weight decay of 0.0002 was used as done in the original Mean Teacher implementation.<br><br>
 Both models were trained for a total of 200 epochs. The train logs for both models is available in their respective folders.  The train logs contain the running time for each epoch, training, and validation loss, and IoU score. 
 
 
