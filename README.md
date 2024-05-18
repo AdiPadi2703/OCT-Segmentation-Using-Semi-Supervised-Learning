@@ -6,7 +6,7 @@ This project uses a semi-supervised learning approach for the semantic segmentat
 
 ## Dataset
 
-The RETOUCH dataset was used, which is available <a href=”https://www.kaggle.com/datasets/saivikassingamsetty/retouch”>here</a>.  The dataset contains OCT scans from three different vendors with four classes (including the background).  The classes are as follows:
+The RETOUCH dataset was used, which is available <a href=”https://www.kaggle.com/datasets/saivikassingamsetty/retouch”>here</a>.  The dataset contains OCT scans from three different vendors with four classes (including the background).  The classes are as follows:<br>
 Class 0: background <br>
 Class 1: Intra-retinal Fluid<br>
 Class 2: Sub-retinal Fluid<br>
@@ -30,7 +30,7 @@ Both models were trained for a total of 200 epochs. The train logs for both mode
 
 The final results on the validation set are as follows:
 
-VGG RESULTS (200):<br>
+VGG19 RESULTS (200):<br>
 
 Final Test IoU: 0.6175590491016335<br>
 Final Test Dice Score Classwise: [ 0.9830918423483305, 0.08740901165957356, 0.41739037627145936, 0.308281467418136 ]<br>
@@ -42,4 +42,15 @@ Final Test IoU: 0.5814705385225956<br>
 Final Test Dice Score Classwise: [ 0.9851030506820322, 0.04001523468846188, 0.4081623935208068, 0.25541135661183895 ]<br>
 Final Test Dice Score : 0.42217300887578496<br>
 
-The predictions made on all 107 validation images along with the dice coefficients and IoU score can be found in the resprective Results folders
+The predictions made on all 107 validation images along with the dice coefficients and IoU score can be found in the resprective Results folders.  A sample comparision has been shown below:<br><br>
+ResNet50 Sample:<br><br>
+<img src="Results_Resnet50/img08.png"><br><br>
+VGG19 Sample:<br><br>
+<img src="Results_VGG19/img08.png"><br>
+
+One observation that can be made from the results is that the models fail to perform well on class 1, which consists of small, scattered spots whenever present in a scan.  One possible approach to improve this would be to use a weighted dice loss for training (not done in this project).
+
+## Further Experimentation
+
+The ensemble of these two models was also tested, however it has not been added to this repository.  VGG19 alone performed better than the ensemble with weights [0.8, 0.2], [0.7,0.3], [0.6,0.4], [0.5,0.5] for VGG19 and ResNet50 respectively.<br>
+The models could be trained for longer to get better results since the losses did appear to not have stagnated.<br>
