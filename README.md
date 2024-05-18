@@ -54,3 +54,13 @@ One observation that can be made from the results is that the models fail to per
 
 The ensemble of these two models was also tested, however it has not been added to this repository.  VGG19 alone performed better than the ensemble with weights [0.8, 0.2], [0.7,0.3], [0.6,0.4], [0.5,0.5] for VGG19 and ResNet50 respectively.<br>
 The models could be trained for longer to get better results since the losses did appear to not have stagnated.<br>
+Other semi-supervised approaches such as FixMatch, MixMatch, etc. can also be used to get better results.<br>
+
+
+## References
+
+1. <a href="https://arxiv.org/abs/1703.01780">Original Paper on Mean Teacher</a>
+2. <a href="https://github.com/CuriousAI/mean-teacher/tree/master/pytorch">Original Implementation of Mean Teacher in PyTorch
+3. <a href="https://github.com/qubvel/segmentation_models.pytorch">Segmentation Models Libaray for PyTorch</a>
+4. <a href="https://github.com/Lightning-AI/torchmetrics">Torchmetrics library source code</a>
+5. <a href="https://pytorch.org/docs/stable/index.html">PyTorch Documentation</a>
