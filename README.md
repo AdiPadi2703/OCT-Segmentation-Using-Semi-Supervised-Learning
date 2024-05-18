@@ -6,7 +6,7 @@ This project uses a semi-supervised learning approach for the semantic segmentat
 
 ## Dataset
 
-The RETOUCH dataset was used, which is available <a href="https://www.kaggle.com/datasets/saivikassingamsetty/retouch">here</a>.  The dataset contains OCT scans from three different vendors with four classes (including the background).  The classes are as follows:<br><br>
+The RETOUCH dataset was used, which is available <a href="https://www.kaggle.com/datasets/saivikassingamsetty/retouch">here</a>.  The dataset contains Optical Coherence Tomography (OCT) scans from three different vendors with four classes (including the background).  The classes are as follows:<br><br>
 Class 0: Background <br>
 Class 1: Intra-retinal Fluid<br>
 Class 2: Sub-retinal Fluid<br>
