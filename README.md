@@ -61,6 +61,6 @@ Other semi-supervised approaches such as FixMatch, MixMatch, etc. can also be us
 
 1. <a href="https://arxiv.org/abs/1703.01780">Original Paper on Mean Teacher</a>
 2. <a href="https://github.com/CuriousAI/mean-teacher/tree/master/pytorch">Original Implementation of Mean Teacher in PyTorch
-3. <a href="https://github.com/qubvel/segmentation_models.pytorch">Segmentation Models Libaray for PyTorch</a>
+3. <a href="https://github.com/qubvel/segmentation_models.pytorch">Segmentation Models Library for PyTorch</a>
 4. <a href="https://github.com/Lightning-AI/torchmetrics">Torchmetrics library source code</a>
 5. <a href="https://pytorch.org/docs/stable/index.html">PyTorch Documentation</a>
