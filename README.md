@@ -43,9 +43,9 @@ Final Test Dice Score Classwise: [ 0.9851030506820322, 0.04001523468846188, 0.40
 Final Test Dice Score : 0.42217300887578496<br>
 
 The predictions made on all 107 validation images along with the dice coefficients and IoU score can be found in the resprective Results folders.  A sample comparision has been shown below:<br><br>
-ResNet50 Sample:<br><br>
+ResNet50 Sample (please click on the image for a larger view):<br><br>
 <img src="Results_Resnet50/img08.png"><br><br>
-VGG19 Sample:<br><br>
+VGG19 Sample (please click on the image for a larger view):<br><br>
 <img src="Results_VGG19/img08.png"><br>
 
 One observation that can be made from the results is that the models fail to perform well on class 1, which consists of small, scattered spots whenever present in a scan.  One possible approach to improve this would be to use a weighted dice loss for training (not done in this project).
