@@ -13,7 +13,8 @@ Class 2: Sub-retinal Fluid<br>
 Class 3: Pigment Epithelial Detachment<br>
 
 For this project, the “train_dataset” directory of images was used as the entire dataset (training and validation).  All the images and masks were read as grayscale, resized to 256x256, and only images were normalized. Linear interpolation was used for resizing both images and masks.<br><br>
-The dataset was split into unlabeled, labeled, and validation sets (sizes 2148, 430, and 107 respectively).  The unlabeled batch size was set to 5 and the labeled batch size was set to 1.  This was done so that unlabeled and labeled training could happen simultaneously and due to memory limitations.
+The dataset was split into unlabeled, labeled, and validation sets (sizes 2148, 430, and 107 respectively).  The unlabeled batch size was set to 5 and the labeled batch size was set to 1.  This was done so that unlabeled and labeled training could happen simultaneously and due to memory limitations.<br><br>
+Another point worth mentioning is that the images were not preprocessed according to the backbone and weights used (see Model), because the images contain a single channel and so it is not necessary.  Such preprocessing is required for RGB (or 3 channel) images.
 
 ## Model
 
