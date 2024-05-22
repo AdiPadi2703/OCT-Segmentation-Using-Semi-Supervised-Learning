@@ -24,7 +24,7 @@ Two different backbones were used as encoders for the UNet, namely ResNet50 and 
 
 A 1:1 combination of dice loss and focal loss was used for training, simply because it gave better results than just dice and a combination of dice and cross-entropy.  Following the paper on the mean teacher model, the EWMA parameter, alpha, was set to 0.99 for the ramp-up phase and 0.999 for training.  During ramp-up, alpha was made to decay as done in the <a href="https://github.com/CuriousAI/mean-teacher/tree/master/pytorch">original Mean Teacher implementation</a>. <br><br>
 The Adam optimizer was used instead of the proposed SGD due to its faster convergence and better results.  The learning rate was initially set to 0.0001 and made to decay with a factor of 0.1 with respect to the training loss.  More details can be found in “main_notebook.ipynb.”  In addition, a weight decay of 0.0002 was used as done in the original Mean Teacher implementation.<br><br>
-Both models were trained for a total of 200 epochs. The train logs for both models is available in their respective folders.  The train logs contain the running time for each epoch, training, and validation loss, and IoU score. 
+Both models were trained for a total of 200 epochs. The train logs for both models are available in their respective folders.  The train logs contain the running time for each epoch, training, and validation loss, and IoU score. 
 
 
 ## Results
