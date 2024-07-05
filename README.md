@@ -18,7 +18,7 @@ Another point worth mentioning is that the images were not preprocessed accordin
 
 ## Model
 
-Two different backbones were used as encoders for the UNet, namely ResNet50 and VGG19 (with batch-normalization).  The models were implemented using the <a href="https://github.com/qubvel/segmentation_models.pytorch">segmentation-models-pytorch</a> library.  The semi-supervised approach used was the <a href="https://arxiv.org/abs/1703.01780">Mean Teacher</a> model.  Both the student and teacher have the exact same architecture.  The encoders of the models were both initialized with imagenet weights.
+Two different backbones were used as encoders for the U-Net, namely ResNet50 and VGG19 (with batch-normalization).  The models were implemented using the <a href="https://github.com/qubvel/segmentation_models.pytorch">segmentation-models-pytorch</a> library.  The semi-supervised approach used was the <a href="https://arxiv.org/abs/1703.01780">Mean Teacher</a> model.  Both the student and teacher have the exact same architecture.  The encoders of the models were both initialized with imagenet weights.
 
 ## Training
 
