@@ -49,7 +49,7 @@ ResNet50 Sample (please click on the image for a larger view):<br><br>
 VGG19 Sample (please click on the image for a larger view):<br><br>
 <img src="Results_VGG19/img08.png"><br>
 
-One observation that can be made from the results is that the models fail to perform well on class 1, which consists of small, scattered spots whenever present in a scan.  One possible approach to improve this would be to use a weighted dice loss for training (not done in this project).
+One observation that can be made from the results is that the models fail to perform well on class 1, which consists of small, scattered spots wherever present in a scan.  One possible approach to improve this would be to use a weighted dice loss for training (not done in this project).
 
 ## Further Experimentation
 
