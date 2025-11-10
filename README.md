@@ -1,4 +1,4 @@
-# OCT-Segmentation-Using-Semi-Supervised-Learning
+# OCT Segmentation Using Semi-Supervised Learning
 
 ## Overview
 
